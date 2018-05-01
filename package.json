@@ -2,25 +2,28 @@
   "name": "bs-semver",
   "version": "0.1.0",
   "description": "The Bucklscript bindings for npm semver package",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "bsb -clean-world",
+    "build": "bsb -make-world",
+    "watch": "bsb -make-world -w"
+  },
+  "keywords": ["bucklescript", "semver"],
+  "author": "Dmytro Gladkyi",
+  "devDependencies": {
+    "bs-platform": "^3.0.0"
+  },
+  "dependencies": {
+    "semver": "^5.5.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gladimdim/bs-semver.git"
   },
-  "keywords": [
-    "bucklescript",
-    "semver"
-  ],
-  "author": "Dmytro Gladkyi",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/gladimdim/bs-semver/issues"
   },
   "homepage": "https://github.com/gladimdim/bs-semver#readme",
-  "dependencies": {
+  "peerDependencies": {
     "semver": "^5.5.0"
   }
 }
