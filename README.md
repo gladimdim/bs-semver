@@ -1,8 +1,21 @@
-_Still WIP_
+# bs-semver
 
-# Bindings to NPM semver package [https://www.npmjs.com/package/semver]
+Bindings to the NPM semver package [https://www.npmjs.com/package/semver]
 
-# Usage
+*** Note: still WIP *** 
+
+## Installation
+```sh
+npm install --save @gladimdim/bs-semver
+yarn add @gladimdim/bs-semver --save
+```
+Then add `@gladimdim/bs-semver` to `bs-dependencies` in your `bsconfig.json`:
+```js
+{
+  ...
+  "bs-dependencies": ["@gladimdim/bs-semver"]
+}
+```
 
 # Build
 

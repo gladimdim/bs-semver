@@ -1,5 +1,5 @@
 {
-  "name": "bs-semver",
+  "name": "@gladimdim/bs-semver",
   "version": "0.1.0",
   "description": "The Bucklscript bindings for npm semver package",
   "scripts": {
@@ -25,5 +25,6 @@
   "homepage": "https://github.com/gladimdim/bs-semver#readme",
   "peerDependencies": {
     "semver": "^5.5.0"
-  }
+  },
+  "files": ["src/semver.re", "bsconfig.json"]
 }
