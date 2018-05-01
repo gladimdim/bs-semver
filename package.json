@@ -1,13 +1,16 @@
 {
   "name": "@gladimdim/bs-semver",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The Bucklscript bindings for npm semver package",
   "scripts": {
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
     "watch": "bsb -make-world -w"
   },
-  "keywords": ["bucklescript", "semver"],
+  "keywords": [
+    "bucklescript",
+    "semver"
+  ],
   "author": "Dmytro Gladkyi",
   "devDependencies": {
     "bs-platform": "^3.0.0"
@@ -26,5 +29,8 @@
   "peerDependencies": {
     "semver": "^5.5.0"
   },
-  "files": ["src/semver.re", "bsconfig.json"]
+  "files": [
+    "src/semver.re",
+    "bsconfig.json"
+  ]
 }
