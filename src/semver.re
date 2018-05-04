@@ -71,10 +71,15 @@ external rcompare : (string, string) => int = "rcompare";
 
 let rcompare = (a, b) => rcompare(a, b);
 
-type tDiff =
+type tRelease = 
   | Major
   | Minor
-  | Patch;
+  | Patch
+  | Premajor
+  | Preminor
+  | Prepatch;
+
+type tDiff = tRelease;
 
 type tAllDiffs = option(tDiff);
 
@@ -90,6 +95,9 @@ let diffStringToDiff = (input: Js.Nullable.t(string)) => {
         | "major" => Some(Major)
         | "minor" => Some(Minor)
         | "patch" => Some(Patch)
+        | "prepatch" => Some(Prepatch)
+        | "premajor" => Some(Premajor)
+        | "preminor" => Some(Preminor)
         | _ => raise(Not_found)
         }
       }
@@ -102,15 +110,32 @@ external diff : (string, string) => Js.Nullable.t(string) = "diff";
 let diff = (a, b) => diff(a, b) |> diffStringToDiff;
 
 
-/***** FUNCTION *****/
+/***** FUNCTIONS *****/
+[@bs.module "semver"] [@bs.val] external valid : string => Js.nullable(string) = "valid";
+
+let valid = v => valid(v);
+
+[@bs.module "semver"] [@bs.val] external inc : string => tRelease => Js.nullable(string) = "inc";
+
+let inc = (v, release) => inc(v, release);
+
 [@bs.module "semver"] [@bs.val] external coerce : string => string = "coerce";
 
 let coerce = a => coerce(a);
 
-[@bs.module "semver"] [@bs.val] external patch : string => string = "patch";
+[@bs.module "semver"] [@bs.val] external patch : string => int = "patch";
 
-let patch = a => patch(a);
+let patch = v => patch(v);
 
+[@bs.module "semver"] [@bs.val] external minor : string => int = "minor";
+
+let minor = v => minor(v);
+
+[@bs.module "semver"] [@bs.val] external major : string => int = "major";
+
+let major = v => major(v);
+
+/***** RANGES *****/
 [@bs.module "semver"] [@bs.val]
 external satisfies : (string, string) => bool = "satisfies";
 

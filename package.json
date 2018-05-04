@@ -5,7 +5,8 @@
   "scripts": {
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
-    "watch": "bsb -make-world -w"
+    "watch": "bsb -make-world -w",
+    "test": "jest"
   },
   "keywords": [
     "bucklescript",
@@ -13,11 +14,13 @@
   ],
   "author": "Dmytro Gladkyi",
   "devDependencies": {
-    "bs-platform": "^3.0.0"
+    "bs-platform": "^3.0.0",
+    "jest": "22.1.2",
+    "@glennsl/bs-jest": "0.3.2"
   },
   "dependencies": {
     "semver": "^5.5.0"
-  },
+   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gladimdim/bs-semver.git"
