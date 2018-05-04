@@ -1,6 +1,6 @@
 {
   "name": "@gladimdim/bs-semver",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The Bucklscript bindings for npm semver package",
   "scripts": {
     "clean": "bsb -clean-world",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "semver": "^5.5.0"
-   },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gladimdim/bs-semver.git"
