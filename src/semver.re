@@ -104,20 +104,30 @@ let diffStringToDiff = (input: Js.Nullable.t(string)) => {
   );
 };
 
+let diffToDiffString = (input: tRelease) => {
+  switch input {
+  | Major => "major"
+  | Minor => "minor"
+  | Patch => "patch"
+  | Premajor => "premajor"
+  | Preminor => "preminor"
+  | Prepatch => "prepatch"
+    }
+  };
+
 [@bs.module "semver"] [@bs.val]
 external diff : (string, string) => Js.Nullable.t(string) = "diff";
 
 let diff = (a, b) => diff(a, b) |> diffStringToDiff;
 
-
 /***** FUNCTIONS *****/
 [@bs.module "semver"] [@bs.val] external valid : string => Js.nullable(string) = "valid";
 
-let valid = v => valid(v);
+let valid = v => valid(v) |> Js.Nullable.toOption;
 
-[@bs.module "semver"] [@bs.val] external inc : string => tRelease => Js.nullable(string) = "inc";
+[@bs.module "semver"] [@bs.val] external inc : string => string => Js.nullable(string) = "inc";
 
-let inc = (v, release) => inc(v, release);
+let inc = (v, release) =>  inc(v, release |> diffToDiffString) |> Js.Nullable.toOption;
 
 [@bs.module "semver"] [@bs.val] external coerce : string => string = "coerce";
 
