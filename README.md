@@ -2,7 +2,7 @@
 
 Bindings to the NPM semver package [https://www.npmjs.com/package/semver]
 
-** Note: still WIP ** 
+**Note: still WIP** 
 
 ## Installation
 ```sh
@@ -31,23 +31,23 @@ npm run watch
 
 # What is covered
 The following functions are covered:
-gt
-gte
-lt
-lte
-eq
-neq
-clean
-valid
-satisfies
-cmp
-compare
-rcompare
-diff
-inc
-patch
-major
-minor
+* gt
+* gte
+* lt
+* lte
+* eq
+* neq
+* clean
+* valid
+* satisfies
+* cmp
+* compare
+* rcompare
+* diff
+* inc
+* patch
+* major
+* minor
 
 # Notes on nullable return type
 Some functions in semver might return null as a valid result. Documentation for semver does not state, which functions return null as a valid value.
