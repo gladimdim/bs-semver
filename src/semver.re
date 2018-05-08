@@ -1,6 +1,7 @@
-[@bs.module "semver"] [@bs.val] external clean : string => string = "clean";
+[@bs.module "semver"] [@bs.val]
+external clean : string => Js.nullable(string) = "clean";
 
-let clean = a => clean(a);
+let clean = a => clean(a) |> Js.Nullable.toOption;
 
 
 /***** COMPARISON START *****/
