@@ -74,7 +74,12 @@ let () =
         test("#neq", () =>
           expect(Semver.neq("10.5.3", "10.5.3")) |> toBe(false)
         );
-
+        test("#compare", () =>
+          expect(Semver.compare("1.2.3", "5.6.3")) |> toBe(-1)
+        );
+        test("#rcompare", () =>
+          expect(Semver.rcompare("1.2.3", "5.6.3")) |> toBe(1)
+        );
       }
     ),
   );
