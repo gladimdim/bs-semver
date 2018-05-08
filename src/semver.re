@@ -84,8 +84,7 @@ type tDiff = tRelease;
 
 type tAllDiffs = option(tDiff);
 
-let diffStringToDiff = (input: Js.Nullable.t(string)) => {
-  Js.log(input);
+let diffStringToDiff = (input: Js.Nullable.t(string)) =>
   Js.Nullable.toOption(input)
   |> (
     opt =>
@@ -103,7 +102,6 @@ let diffStringToDiff = (input: Js.Nullable.t(string)) => {
         }
       }
   );
-};
 
 let diffToDiffString = (input: tRelease) =>
   switch (input) {
@@ -132,10 +130,6 @@ external inc : (string, string) => Js.nullable(string) = "inc";
 
 let inc = (v, release) =>
   inc(v, release |> diffToDiffString) |> Js.Nullable.toOption;
-
-[@bs.module "semver"] [@bs.val] external coerce : string => string = "coerce";
-
-let coerce = a => coerce(a);
 
 [@bs.module "semver"] [@bs.val] external patch : string => int = "patch";
 

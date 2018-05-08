@@ -8,6 +8,7 @@
     "watch": "bsb -make-world -w",
     "test": "jest"
   },
+  "license": "MIT",
   "keywords": [
     "bucklescript",
     "semver"
