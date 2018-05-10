@@ -80,6 +80,7 @@ let () =
         test("#rcompare", () =>
           expect(Semver.rcompare("1.2.3", "5.6.3")) |> toBe(1)
         );
+	test("#createSemver", () => expect(Semver.createSemver("1.3.5")##version) |> toBe("1.3.5")); 
       }
     ),
   );

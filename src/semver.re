@@ -149,3 +149,14 @@ let major = v => major(v);
 external satisfies : (string, string) => bool = "satisfies";
 
 let satisfies = (a, b) => satisfies(a, b);
+
+class type semverInstance =
+  [@bs]
+  {
+    pub inc: tRelease => semverInstance;
+    pub version: string
+  };
+
+type tSemver = Js.t(semverInstance);
+
+[@bs.new] [@bs.module] external createSemver : string => tSemver = "semver";
