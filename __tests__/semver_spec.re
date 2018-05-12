@@ -80,7 +80,14 @@ let () =
         test("#rcompare", () =>
           expect(Semver.rcompare("1.2.3", "5.6.3")) |> toBe(1)
         );
-	test("#createSemver", () => expect(Semver.createSemver("1.3.5")##version) |> toBe("1.3.5")); 
+	test("#version", () => expect(Semver.createSemver("1.3.5")##version) |> toBe("1.3.5")); 
+	test("#major", () => expect(Semver.createSemver("1.3.5")##major) |> toBe(1)); 
+	test("#minor", () => expect(Semver.createSemver("1.3.5")##minor) |> toBe(3)); 
+	test("#patch", () => expect(Semver.createSemver("1.3.5")##patch) |> toBe(5)); 
+	test("#raw", () => expect(Semver.createSemver("1.3.5")##raw) |> toBe("1.3.5")); 
+	
+
+
       }
     ),
   );

@@ -154,7 +154,11 @@ class type semverInstance =
   [@bs]
   {
     pub inc: tRelease => semverInstance;
-    pub version: string
+    pub version: string;
+    pub major: int;
+    pub minor: int;
+    pub patch: int;
+    pub raw: string
   };
 
 type tSemver = Js.t(semverInstance);
