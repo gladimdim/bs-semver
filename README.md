@@ -1,8 +1,6 @@
 # bs-semver
 
-Bindings to the NPM semver package [https://www.npmjs.com/package/semver]
-
-**Note: still WIP** 
+Bindings to the official [NPM semver package](https://www.npmjs.com/package/semver)
 
 ## Installation
 ```sh
@@ -16,6 +14,28 @@ Then add `@gladimdim/bs-semver` to `bs-dependencies` in your `bsconfig.json`:
   "bs-dependencies": ["@gladimdim/bs-semver"]
 }
 ```
+
+# Usage
+Exposed function can be accessed in the same way, as in JavaScript:
+```
+let minor = Semver.minor("3.5.0"); /* 5 */
+```
+You can construct Semver object:
+JavaScript version:
+```js
+const semver = new Semver("3.5.0");
+const minor = semver.minor;
+const patch = semver.patch;
+```
+
+ReasonML:
+```
+let semver = Semver.createSemver("3.5.0");
+let minor = semver##minor;
+let patch = semver##patch;
+```
+
+You can reference [__tests__/semver_spec.re]("./blob/master/__tests__/semver_spec.re) tests for more examples.
 
 # Build
 
@@ -48,6 +68,7 @@ The following functions are covered:
 * patch
 * major
 * minor
+* new Semver("3.5.0")
 
 # Notes on nullable return type
 Some functions in semver might return null as a valid result. Documentation for semver does not state, which functions return null as a valid value.
