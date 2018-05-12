@@ -158,7 +158,9 @@ class type semverInstance =
     pub major: int;
     pub minor: int;
     pub patch: int;
-    pub raw: string
+    pub raw: string;
+    pub build: array(string);
+    pub prerelease: array(string)
   };
 
 type tSemver = Js.t(semverInstance);
