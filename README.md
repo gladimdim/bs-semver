@@ -35,7 +35,7 @@ let minor = semver##minor;
 let patch = semver##patch;
 ```
 
-You can reference [__tests__/semver_spec.re]("./__tests__/semver_spec.re) tests for more examples.
+You can reference [__tests__/semver_spec.re](./__tests__/semver_spec.re) tests for more examples.
 
 # Build
 
